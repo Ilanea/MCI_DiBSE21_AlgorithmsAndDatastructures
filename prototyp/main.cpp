@@ -18,8 +18,6 @@ int main() {
     Ware *ware8 = new Ware("H", 8, 88, 80, 857);
     Ware *ware9 = new Ware("I", 9, 345, 90, 234);
 
-
-
     sortiment->addWare(ware7);
     sortiment->addWare(ware2);
     sortiment->addWare(ware5);
