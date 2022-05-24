@@ -15,7 +15,6 @@ public:
     static void insertionsort_einkauf(Ware *waren[]);
     static void insertionsort_verkauf(Ware *waren[]);
 
-
 };
 
 

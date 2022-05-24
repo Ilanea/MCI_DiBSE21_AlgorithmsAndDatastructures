@@ -26,25 +26,17 @@ public:
     //Destruktor
     ~Ware();
 
-    std::string getBezeichnung(){
-        return this->bezeichnung;
-    }
+    std::string getBezeichnung();
+    int getSeriennummer() const;
+    double getGewicht() const;
+    double getEinkaufspreis() const;
+    double getVerkaufspreis() const;
 
-    int getSeriennummer() const{
-        return this->seriennummer;
-    }
-
-    double getGewicht() const{
-        return this->gewicht;
-    }
-
-    double getEinkaufspreis() const{
-        return this->einkaufspreis;
-    }
-
-    double getVerkaufspreis() const{
-        return this->verkaufspreis;
-    }
+    void setBezeichnung();
+    void setSeriennummer();
+    void setGewicht();
+    void setEinkaufspreis();
+    void setVerkaufspreis();
 
 };
 
