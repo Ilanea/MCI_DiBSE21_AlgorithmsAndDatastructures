@@ -13,11 +13,16 @@
 class Sortiment {
 protected:
     Ware* waren[WARENCOUNT] = {};
+    int WarenAnzahl = 0;
 
 public:
     void addWare(Ware *ware);
     void printSortiment();
     void sort(int modus);
+
+    int getWarenAnzahl(){
+        return WarenAnzahl;
+    }
 
 };
 

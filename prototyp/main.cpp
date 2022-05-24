@@ -39,7 +39,15 @@ int main() {
     std::cout << "---------------------------------------------------------------------------------------------------------------" << std::endl;
     std::cout << "Sortieren: ";
 
-    sortiment->sort(5);
+    sortiment->sort(2);
+
+    /*
+    int modus == 1: Sortierung nach Seriennummer mithilfe des quicksort-Algorithmus
+    int modus == 2: Sortierung nach Gewicht mithilfe des bubblesort-Algorithmus
+    int modus == 3: Sortierung alphabetisch nach Bezeichnung mihilfe des mergesort-Algorithmus
+    int modus == 4: Sortierung nach Einkaufspreis mithilfe des insertionsort-Algorithmus in seiner Basisvariante.
+    int modus == 5: Sortierung nach Verkaufspreis mithilfe des insertionsort-Algorithmus in seiner Basisvariante.
+     */
 
     std::cout << "---------------------------------------------------------------------------------------------------------------" << std::endl;
     std::cout << "Wareninfo nach sortieren: " << std::endl;
@@ -47,6 +55,7 @@ int main() {
     sortiment->printSortiment();
 
     std::cout << "---------------------------------------------------------------------------------------------------------------" << std::endl;
+
 
     return 0;
 

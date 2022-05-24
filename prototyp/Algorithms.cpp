@@ -3,28 +3,39 @@
 //
 
 #include "Algorithms.h"
-#include "Ware.h"
+#include "Sortiment.h"
 
-void Algorithms::quicksort_seriennummer(Ware *waren[]) {
+void Algorithms::quicksort_seriennummer(int WarenAnzahl, Ware *waren[]) {
 
-}
+    //https://www.geeksforgeeks.org/quick-sort/
 
-void Algorithms::bubblesort_gewicht(Ware *waren[]) {
-
-}
-
-void Algorithms::mergesort_alphabetisch(Ware *waren[]) {
+    
 
 }
 
-void Algorithms::insertionsort_einkauf(Ware *waren[]) {
-    for(int index = 0; index < WARENCOUNT; index++){
+void Algorithms::bubblesort_gewicht(int WarenAnzahl, Ware *waren[]) {
+
+    //https://www.geeksforgeeks.org/bubble-sort/
+
+    for (int index = 0; index < WarenAnzahl; index++)
+        for (int j = 0; j < WarenAnzahl - index - 1; j++)
+            if (waren[j]->getGewicht() > waren[j + 1]->getGewicht())
+                std::swap(waren[j], waren[j + 1]);
+}
+
+void Algorithms::mergesort_alphabetisch(int WarenAnzahl, Ware *waren[]) {
+
+    //https://www.geeksforgeeks.org/merge-sort/
+
+}
+
+void Algorithms::insertionsort_einkauf(int WarenAnzahl, Ware *waren[]) {
+
+    //https://www.geeksforgeeks.org/insertion-sort/
+
+    for(int index = 0; index < WarenAnzahl; index++){
         Ware *temp = waren[index];
-        int j = index-1;
-
-        //std::cout << "Temp: " << temp << std::endl;
-        //std::cout << "Pointer: " << waren[index] << std::endl;
-
+        int j = index - 1;
         while(j >= 0 && temp->getEinkaufspreis() <= waren[j]->getEinkaufspreis())
         {
             waren[j+1] = waren[j];
@@ -34,14 +45,13 @@ void Algorithms::insertionsort_einkauf(Ware *waren[]) {
     }
 }
 
-void Algorithms::insertionsort_verkauf(Ware *waren[]) {
-    for(int index = 0; index < WARENCOUNT; index++){
+void Algorithms::insertionsort_verkauf(int WarenAnzahl, Ware *waren[]) {
+
+    //https://www.geeksforgeeks.org/insertion-sort/
+
+    for(int index = 0; index < WarenAnzahl; index++){
         Ware *temp = waren[index];
-        int j = index-1;
-
-        //std::cout << "Temp: " << temp << std::endl;
-        //std::cout << "Pointer: " << waren[index] << std::endl;
-
+        int j = index - 1;
         while(j >= 0 && temp->getVerkaufspreis() <= waren[j]->getVerkaufspreis())
         {
             waren[j+1] = waren[j];

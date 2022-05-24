@@ -9,11 +9,11 @@
 
 class Algorithms {
 public:
-    static void quicksort_seriennummer(Ware *waren[]);
-    static void bubblesort_gewicht(Ware *waren[]);
-    static void mergesort_alphabetisch(Ware *waren[]);
-    static void insertionsort_einkauf(Ware *waren[]);
-    static void insertionsort_verkauf(Ware *waren[]);
+    static void quicksort_seriennummer(int WarenAnzahl, Ware *waren[]);
+    static void bubblesort_gewicht(int WarenAnzahl, Ware *waren[]);
+    static void mergesort_alphabetisch(int WarenAnzahl, Ware *waren[]);
+    static void insertionsort_einkauf(int WarenAnzahl, Ware *waren[]);
+    static void insertionsort_verkauf(int WarenAnzahl, Ware *waren[]);
 
 };
 
