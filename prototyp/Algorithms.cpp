@@ -3,13 +3,12 @@
 //
 
 #include "Algorithms.h"
-#include "Sortiment.h"
 
 void Algorithms::quicksort_seriennummer(int WarenAnzahl, Ware *waren[]) {
 
     //https://www.geeksforgeeks.org/quick-sort/
 
-    
+
 
 }
 
@@ -27,6 +26,18 @@ void Algorithms::mergesort_alphabetisch(int WarenAnzahl, Ware *waren[]) {
 
     //https://www.geeksforgeeks.org/merge-sort/
 
+    int Middle = WarenAnzahl;
+
+    auto divide = [&Middle](Ware *waren[]){
+        int middle = 1 + (Middle-1) / 2;
+        return middle;
+    };
+
+    while(Middle >= 2){
+        Middle = divide(waren);
+        std::cout << "Middle: " << Middle << std::endl;
+    }
+
 }
 
 void Algorithms::insertionsort_einkauf(int WarenAnzahl, Ware *waren[]) {
@@ -36,8 +47,7 @@ void Algorithms::insertionsort_einkauf(int WarenAnzahl, Ware *waren[]) {
     for(int index = 0; index < WarenAnzahl; index++){
         Ware *temp = waren[index];
         int j = index - 1;
-        while(j >= 0 && temp->getEinkaufspreis() <= waren[j]->getEinkaufspreis())
-        {
+        while(j >= 0 && temp->getEinkaufspreis() <= waren[j]->getEinkaufspreis()){
             waren[j+1] = waren[j];
             j = j-1;
         }
@@ -52,8 +62,7 @@ void Algorithms::insertionsort_verkauf(int WarenAnzahl, Ware *waren[]) {
     for(int index = 0; index < WarenAnzahl; index++){
         Ware *temp = waren[index];
         int j = index - 1;
-        while(j >= 0 && temp->getVerkaufspreis() <= waren[j]->getVerkaufspreis())
-        {
+        while(j >= 0 && temp->getVerkaufspreis() <= waren[j]->getVerkaufspreis()){
             waren[j+1] = waren[j];
             j = j-1;
         }

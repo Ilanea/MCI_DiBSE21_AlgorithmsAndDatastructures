@@ -7,6 +7,7 @@
 
 
 #include <string>
+#include <iostream>
 
 class Ware {
 protected:
@@ -24,7 +25,9 @@ public:
     }
 
     //Destruktor
-    ~Ware();
+    ~Ware(){
+        //std::cout << "Dekonstruktor Ware" << std::endl;
+    };
 
     std::string getBezeichnung();
     int getSeriennummer() const;

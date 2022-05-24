@@ -16,6 +16,14 @@ protected:
     int WarenAnzahl = 0;
 
 public:
+
+    ~Sortiment(){
+        //std::cout << "Dekonstruktor Sortiment" << std::endl;
+        for (int i = 0; i < WARENCOUNT; ++i) {
+            delete waren[i];
+        }
+    }
+
     void addWare(Ware *ware);
     void printSortiment();
     void sort(int modus);
