@@ -1,6 +1,7 @@
 #include <iostream>
 #include <random>
 #include <string>
+#include <ctime>
 #include "Sortiment.h"
 
 std::string random_string(int Dist, std::size_t length){
@@ -20,6 +21,8 @@ std::string random_string(int Dist, std::size_t length){
 }
 
 int main() {
+
+    srand((unsigned) time(NULL));
 
     Sortiment *sortiment = new Sortiment();
 
