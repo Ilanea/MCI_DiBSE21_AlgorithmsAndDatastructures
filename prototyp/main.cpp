@@ -23,7 +23,7 @@ int main() {
 
     Sortiment *sortiment = new Sortiment();
 
-    for(int i = 0; i <= WARENCOUNT; i++){
+    for(int i = 0; i <= WARENCOUNT-1; i++){
         int Dist = rand() % 62;
         int seriennummer = rand() % 1000 + 1;
         int gewicht = rand() % 1000 + 1;
