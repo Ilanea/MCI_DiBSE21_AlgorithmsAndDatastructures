@@ -37,7 +37,7 @@ int main() {
     std::cout << "---------------------------------------------------------------------------------------------------------------" << std::endl;
     std::cout << "Sortieren: ";
 
-    sortiment->sort(3);
+    sortiment->sort(1);
 
     /*
     int modus == 1: Sortierung nach Seriennummer mithilfe des quicksort-Algorithmus

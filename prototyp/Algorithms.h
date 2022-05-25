@@ -9,13 +9,18 @@
 
 class Algorithms {
 public:
-    static void quicksort_seriennummer(int WarenAnzahl, Ware *waren[]);
-    static void bubblesort_gewicht(int WarenAnzahl, Ware *waren[]);
-    static void mergesort_alphabetisch(int WarenAnzahl, Ware *waren[]);
-    static void merge_sort(Ware *waren[], int low, int high);
-    static void merge(Ware *waren[], int low, int high, int mid);
-    static void insertionsort_einkauf(int WarenAnzahl, Ware *waren[]);
-    static void insertionsort_verkauf(int WarenAnzahl, Ware *waren[]);
+
+    ~Algorithms(){};
+
+    void quicksort_seriennummer(int WarenAnzahl, Ware *waren[]);
+    int partition(Ware *waren[], int low, int high);
+    void quicksort(Ware *waren[], int low, int high);
+    void bubblesort_gewicht(int WarenAnzahl, Ware *waren[]);
+    void mergesort_alphabetisch(int WarenAnzahl, Ware *waren[]);
+    void merge_sort(Ware *waren[], int low, int high);
+    void merge(Ware *waren[], int low, int high, int mid);
+    void insertionsort_einkauf(int WarenAnzahl, Ware *waren[]);
+    void insertionsort_verkauf(int WarenAnzahl, Ware *waren[]);
 
 };
 

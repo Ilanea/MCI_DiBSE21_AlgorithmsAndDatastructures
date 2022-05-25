@@ -6,8 +6,6 @@
 #include "Sortiment.h"
 #include "Algorithms.h"
 
-
-
 void Sortiment::addWare(Ware *ware) {
 
     for(int index = 0; index < WARENCOUNT; index++){
@@ -27,21 +25,23 @@ void Sortiment::addWare(Ware *ware) {
 
 void Sortiment::sort(int modus) {
 
+    Algorithms algorithms;
+
     if(modus == 1){
         std::cout << "Verwende Algorithmus Quicksort fuer Seriennummern." <<  std::endl;
-        Algorithms::quicksort_seriennummer(this->WarenAnzahl, this->waren);
+        algorithms.quicksort_seriennummer(this->WarenAnzahl, this->waren);
     } else if(modus == 2){
         std::cout << "Verwende Algorithmus Bubblesort fuer Gewicht." <<  std::endl;
-        Algorithms::bubblesort_gewicht(this->WarenAnzahl, this->waren);
+        algorithms.bubblesort_gewicht(this->WarenAnzahl, this->waren);
     } else if(modus == 3){
         std::cout << "Verwende Algorithmus Mergesort fuer Bezeichnung." <<  std::endl;
-        Algorithms::mergesort_alphabetisch(this->WarenAnzahl, this->waren);
+        algorithms.mergesort_alphabetisch(this->WarenAnzahl, this->waren);
     } else if(modus == 4){
         std::cout << "Verwende Algorithmus Insertionsort fuer Einkaufspreis." <<  std::endl;
-        Algorithms::insertionsort_einkauf(this->WarenAnzahl, this->waren);
+        algorithms.insertionsort_einkauf(this->WarenAnzahl, this->waren);
     } else if(modus == 5){
         std::cout << "Verwende Algorithmus Insertionsort fuer Verkaufspreis." <<  std::endl;
-        Algorithms::insertionsort_verkauf(this->WarenAnzahl, this->waren);
+        algorithms.insertionsort_verkauf(this->WarenAnzahl, this->waren);
     }
 
 }

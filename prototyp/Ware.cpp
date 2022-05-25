@@ -24,23 +24,3 @@ double Ware::getEinkaufspreis() const{
 double Ware::getVerkaufspreis() const{
     return this->verkaufspreis;
 }
-
-void Ware::setBezeichnung() {
-
-}
-
-void Ware::setSeriennummer() {
-
-}
-
-void Ware::setGewicht() {
-
-}
-
-void Ware::setEinkaufspreis() {
-
-}
-
-void Ware::setVerkaufspreis() {
-
-}

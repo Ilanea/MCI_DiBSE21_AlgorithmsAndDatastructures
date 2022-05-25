@@ -5,7 +5,6 @@
 #ifndef PROTOTYP_WARE_H
 #define PROTOTYP_WARE_H
 
-
 #include <string>
 #include <iostream>
 
@@ -34,12 +33,6 @@ public:
     double getGewicht() const;
     double getEinkaufspreis() const;
     double getVerkaufspreis() const;
-
-    void setBezeichnung();
-    void setSeriennummer();
-    void setGewicht();
-    void setEinkaufspreis();
-    void setVerkaufspreis();
 
 };
 
