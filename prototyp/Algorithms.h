@@ -19,7 +19,7 @@ public:
     void quicksort(Ware *waren[], int low, int high);
     void bubblesort_gewicht(int WarenAnzahl, Ware *waren[]);
     void mergesort_alphabetisch(int WarenAnzahl, Ware *waren[]);
-    void merge_sort(Ware *waren[], int low, int high);
+    void mergesort(Ware *waren[], int low, int high);
     void merge(Ware *waren[], int low, int high, int mid);
     void insertionsort_einkauf(int WarenAnzahl, Ware *waren[]);
     void insertionsort_verkauf(int WarenAnzahl, Ware *waren[]);

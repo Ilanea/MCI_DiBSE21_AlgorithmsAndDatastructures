@@ -58,16 +58,16 @@ void Algorithms::bubblesort_gewicht(int WarenAnzahl, Ware *waren[]) {
 
 void Algorithms::mergesort_alphabetisch(int WarenAnzahl, Ware *waren[]) {
 
-    merge_sort(waren, 0, WarenAnzahl-1);
+    mergesort(waren, 0, WarenAnzahl-1);
 }
 
-void Algorithms::merge_sort(Ware *waren[], int low, int high) {
+void Algorithms::mergesort(Ware *waren[], int low, int high) {
 
     int mid;
     if(low < high){
         mid=(low+high)/2;
-        merge_sort(waren,low,mid);
-        merge_sort(waren,mid+1,high);
+        mergesort(waren,low,mid);
+        mergesort(waren,mid+1,high);
         merge(waren,low,high,mid);
     }
 }
