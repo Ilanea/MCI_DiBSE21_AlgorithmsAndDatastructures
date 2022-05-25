@@ -12,10 +12,10 @@ void Sortiment::addWare(Ware *ware) {
         if(this->waren[index] == nullptr){
             waren[index] = ware;
             WarenAnzahl++;
-            std::cout << "Ware wurde hinzugefuegt" << std::endl;
+            std::cout << "Ware mit der Bezeichnung \"" << ware->getBezeichnung() << "\" wurde dem Sortiment hinzugefuegt" << std::endl;
             break;
         } else if(this->waren[WARENCOUNT-1] != nullptr){
-                std::cout << "Kein Platz mehr vorhanden" << std::endl;
+                std::cout << "Kein Platz mehr im Sortiment vorhanden" << std::endl;
                 break;
         }
     }
