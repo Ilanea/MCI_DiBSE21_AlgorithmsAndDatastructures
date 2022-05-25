@@ -10,7 +10,9 @@
 class Algorithms {
 public:
 
-    ~Algorithms(){};
+    ~Algorithms(){
+        //std::cout << "Dekonstruktor Algorithms" << std::endl;
+    };
 
     void quicksort_seriennummer(int WarenAnzahl, Ware *waren[]);
     int partition(Ware *waren[], int low, int high);
