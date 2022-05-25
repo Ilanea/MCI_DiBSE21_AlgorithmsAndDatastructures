@@ -9,12 +9,12 @@
 void Sortiment::addWare(Ware *ware) {
 
     for(int index = 0; index < WARENCOUNT; index++){
-        if(this->waren[index] == nullptr){
+        if(!this->waren[index]){
             waren[index] = ware;
             WarenAnzahl++;
             std::cout << "Ware mit der Bezeichnung \"" << ware->getBezeichnung() << "\" wurde dem Sortiment hinzugefuegt" << std::endl;
             break;
-        } else if(this->waren[WARENCOUNT-1] != nullptr){
+        } else if(this->waren[WARENCOUNT-1]){
                 std::cout << "Kein Platz mehr im Sortiment vorhanden" << std::endl;
                 break;
         }
@@ -46,7 +46,7 @@ void Sortiment::sort(int modus) {
 void Sortiment::printSortiment() {
 
     for(int index = 0; index < WARENCOUNT; index++){
-        if(waren[index] != nullptr){
+        if(waren[index]){
             std::cout << "Bezeichnung: " << this->waren[index]->getBezeichnung() << " || Seriennummer: " << this->waren[index]->getSeriennummer() << " || Gewicht: " << this->waren[index]->getGewicht() << " || Einkaufspreis: " << this->waren[index]->getEinkaufspreis() << " || Verkaufspreis: " << this->waren[index]->getVerkaufspreis() << std::endl;
         }
     }
