@@ -19,8 +19,6 @@ void Sortiment::addWare(Ware *ware) {
                 break;
         }
     }
-
-
 }
 
 void Sortiment::sort(int modus) {
@@ -43,7 +41,6 @@ void Sortiment::sort(int modus) {
         std::cout << "Verwende Algorithmus Insertionsort fuer Verkaufspreis." <<  std::endl;
         algorithms.insertionsort_verkauf(this->WarenAnzahl, this->waren);
     }
-
 }
 
 void Sortiment::printSortiment() {
@@ -53,5 +50,4 @@ void Sortiment::printSortiment() {
             std::cout << "Bezeichnung: " << this->waren[index]->getBezeichnung() << " || Seriennummer: " << this->waren[index]->getSeriennummer() << " || Gewicht: " << this->waren[index]->getGewicht() << " || Einkaufspreis: " << this->waren[index]->getEinkaufspreis() << " || Verkaufspreis: " << this->waren[index]->getVerkaufspreis() << std::endl;
         }
     }
-
 }

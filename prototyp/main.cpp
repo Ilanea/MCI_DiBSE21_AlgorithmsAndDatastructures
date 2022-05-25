@@ -1,33 +1,37 @@
 #include <iostream>
+#include <random>
+#include <string>
 #include "Sortiment.h"
-#include "Ware.h"
 
+std::string random_string(int Dist, std::size_t length){
+    const std::string CHARACTERS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+    std::random_device random_device;
+    std::mt19937 generator(random_device());
+    std::uniform_int_distribution<int> distribution(0, Dist);
+
+    std::string random_string;
+
+    for (std::size_t i = 0; i < length; ++i){
+        random_string += CHARACTERS[distribution(generator)];
+    }
+
+    return random_string;
+}
 
 int main() {
 
     Sortiment *sortiment = new Sortiment();
 
-    Ware *ware0 = new Ware("0", 0, 0, 0, 0);
-    Ware *ware1 = new Ware("A", 1, 14, 10, 321);
-    Ware *ware2 = new Ware("B", 2, 3, 20, 6467);
-    Ware *ware3 = new Ware("C", 3, 54, 30, 5898);
-    Ware *ware4 = new Ware("D", 4, 278, 40, 456);
-    Ware *ware5 = new Ware("E", 5, 123, 50, 975);
-    Ware *ware6 = new Ware("F", 6, 5, 60, 567);
-    Ware *ware7 = new Ware("G", 7, 1, 70, 43);
-    Ware *ware8 = new Ware("H", 8, 88, 80, 857);
-    Ware *ware9 = new Ware("I", 9, 345, 90, 234);
-
-    sortiment->addWare(ware7);
-    sortiment->addWare(ware2);
-    sortiment->addWare(ware5);
-    sortiment->addWare(ware3);
-    sortiment->addWare(ware6);
-    sortiment->addWare(ware8);
-    sortiment->addWare(ware9);
-    sortiment->addWare(ware1);
-    sortiment->addWare(ware4);
-    sortiment->addWare(ware0);
+    for(int i = 0; i <= WARENCOUNT; i++){
+        int Dist = rand() % 62;
+        int seriennummer = rand() % 1000 + 1;
+        int gewicht = rand() % 1000 + 1;
+        int einkaufspreis = rand() % 1000 + 1;
+        int verkaufspreis = rand() % 1000 + 1;
+        Ware *ware = new Ware(random_string(Dist,5), seriennummer, gewicht, einkaufspreis, verkaufspreis);
+        sortiment->addWare(ware);
+    }
 
     std::cout << "---------------------------------------------------------------------------------------------------------------" << std::endl;
     std::cout << "Wareninfo vor sortieren: " << std::endl;
