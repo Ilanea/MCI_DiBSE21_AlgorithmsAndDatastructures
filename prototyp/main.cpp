@@ -49,7 +49,7 @@ int main() {
     std::cout << "---------------------------------------------------------------------------------------------------------------" << std::endl;
     std::cout << "Sortieren: ";
 
-    //sortiment->sort(5);
+    sortiment->sort(1);
 
     /*
     int modus == 1: Sortierung nach Seriennummer mithilfe des quicksort-Algorithmus
@@ -67,12 +67,21 @@ int main() {
     std::cout << "---------------------------------------------------------------------------------------------------------------" << std::endl;
 
 
-    std::cout << "Binary Tree" << std::endl;
+    std::cout << "Preorder nach Verkaufspreis" << std::endl;
 
     std::cout << "---------------------------------------------------------------------------------------------------------------" << std::endl;
 
 
     std::cout << binaryTree->printPreorder() << "\n";
+
+    std::cout << "---------------------------------------------------------------------------------------------------------------" << std::endl;
+
+
+    std::cout << "Postorder nach Verkaufspreis" << std::endl;
+
+    std::cout << "---------------------------------------------------------------------------------------------------------------" << std::endl;
+
+    std::cout << binaryTree->printPostorder() << "\n";
 
     delete sortiment;
 
