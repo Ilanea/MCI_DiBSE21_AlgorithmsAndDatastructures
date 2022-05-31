@@ -5,7 +5,7 @@
 #ifndef PROTOTYP_SORTIMENT_H
 #define PROTOTYP_SORTIMENT_H
 
-#define WARENCOUNT 10
+#define WARENCOUNT 50
 
 #include <iostream>
 #include "Ware.h"

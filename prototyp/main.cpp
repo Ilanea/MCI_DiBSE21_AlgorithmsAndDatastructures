@@ -3,6 +3,7 @@
 #include <string>
 #include <ctime>
 #include "Sortiment.h"
+#include "extendedBinaryTree.h"
 
 std::string random_string(int Dist, std::size_t length){
     const std::string CHARACTERS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -26,7 +27,10 @@ int main() {
 
     Sortiment *sortiment = new Sortiment();
 
-    for(int i = 0; i < WARENCOUNT; i++){
+    Ware *rootWare = new Ware("ROOT", 1, 1, 1, 100);
+    BinaryTree *binaryTree = new BinaryTree(rootWare);
+
+    for(int i = 0; i < 10; i++){
         int Dist = rand() % 62;
         int seriennummer = rand() % 1000 + 1;
         int gewicht = rand() % 1000 + 1;
@@ -34,6 +38,7 @@ int main() {
         int verkaufspreis = rand() % 1000 + 1;
         Ware *ware = new Ware(random_string(Dist,5), seriennummer, gewicht, einkaufspreis, verkaufspreis);
         sortiment->addWare(ware);
+        binaryTree->insert(ware);
     }
 
     std::cout << "---------------------------------------------------------------------------------------------------------------" << std::endl;
@@ -44,7 +49,7 @@ int main() {
     std::cout << "---------------------------------------------------------------------------------------------------------------" << std::endl;
     std::cout << "Sortieren: ";
 
-    sortiment->sort(1);
+    //sortiment->sort(5);
 
     /*
     int modus == 1: Sortierung nach Seriennummer mithilfe des quicksort-Algorithmus
@@ -60,6 +65,14 @@ int main() {
     sortiment->printSortiment();
 
     std::cout << "---------------------------------------------------------------------------------------------------------------" << std::endl;
+
+
+    std::cout << "Binary Tree" << std::endl;
+
+    std::cout << "---------------------------------------------------------------------------------------------------------------" << std::endl;
+
+
+    std::cout << binaryTree->printPreorder() << "\n";
 
     delete sortiment;
 
