@@ -100,6 +100,7 @@ void doublyLinkedList::insertSorted(int key) {
         if(key < current->key){
             prev->next = newItem;
             newItem->next = current;
+            newItem->previous = prev;
             inserted = true;
         } else {
             continue;

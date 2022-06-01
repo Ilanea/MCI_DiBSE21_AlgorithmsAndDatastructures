@@ -139,9 +139,13 @@ int main() {
     std::cout << "Liste 1:" << std::endl;
     list->print();
 
-    list2->deleteItem(2);
+    list->deleteItem(2);
     std::cout << "Liste 1:" << std::endl;
     list->print();
+
+    delete list;
+    delete list2;
+    delete list5;
 
     return 0;
 
