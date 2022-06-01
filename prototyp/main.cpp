@@ -4,6 +4,7 @@
 #include <ctime>
 #include "Sortiment.h"
 #include "extendedBinaryTree.h"
+#include "doublyLinkedList.h"
 
 std::string random_string(int Dist, std::size_t length){
     const std::string CHARACTERS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -84,6 +85,63 @@ int main() {
     std::cout << binaryTree->printPostorder() << "\n";
 
     delete sortiment;
+
+    delete binaryTree;
+
+    std::cout << "---------------------------------------------------------------------------------------------------------------" << std::endl;
+
+
+    std::cout << "Doubly Linked List Test" << std::endl;
+
+    std::cout << "---------------------------------------------------------------------------------------------------------------" << std::endl;
+
+    doublyLinkedList *list = new doublyLinkedList();
+
+    doublyLinkedList *list5 = new doublyLinkedList();
+
+    std::cout << "Liste 5:" << std::endl;
+    list5->print();
+
+
+    list->insertSorted(5);
+    list->insertSorted(7);
+    list->insertSorted(19);
+    list->insertSorted(54);
+    list->insertSorted(1);
+    list->insertSorted(9);
+    list->insertSorted(17);
+    list->insertSorted(17);
+    list->insertSorted(108);
+    list->insertSorted(8);
+
+    std::cout << "Liste 1:" << std::endl;
+    list->print();
+
+    doublyLinkedList *list2 = new doublyLinkedList();
+    list2->insertSorted(2);
+    list2->insertSorted(3);
+    list2->insertSorted(4);
+
+    std::cout << "Liste 2:" << std::endl;
+    list2->print();
+
+    list->splice(list2, 4);
+
+    std::cout << "Liste 1:" << std::endl;
+    list->print();
+
+    list2->insertSorted(78);
+
+    std::cout << "Liste 2:" << std::endl;
+    list2->print();
+
+    list->append(list2);
+    std::cout << "Liste 1:" << std::endl;
+    list->print();
+
+    list2->deleteItem(2);
+    std::cout << "Liste 1:" << std::endl;
+    list->print();
 
     return 0;
 
