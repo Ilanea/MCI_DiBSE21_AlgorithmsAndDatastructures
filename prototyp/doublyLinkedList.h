@@ -11,16 +11,16 @@
 
 class ExtendedListItem;
 
-struct doublyLinkedList {
+struct DoublyLinkedList {
 public:
-    doublyLinkedList();
+    DoublyLinkedList();
 
     ExtendedListItem* head;
     ExtendedListItem* tail;
     void insertSorted(int key);
 
-    void append(doublyLinkedList* appendingList);
-    void splice(doublyLinkedList* insertingList, int position);
+    void append(DoublyLinkedList* appendingList);
+    void splice(DoublyLinkedList* insertingList, int position);
     void insertAtStart(int key);
     void insertAtEnd(int key);
     void deleteItem(int key);

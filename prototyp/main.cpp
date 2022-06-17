@@ -5,9 +5,11 @@
 #include "Sortiment.h"
 #include "extendedBinaryTree.h"
 #include "doublyLinkedList.h"
+#include "extendedAvlTree.h"
+#include "hashTableChaining.h"
 
 std::string random_string(int Dist, std::size_t length){
-    const std::string CHARACTERS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    const std::string CHARACTERS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     std::random_device random_device;
     std::mt19937 generator(random_device());
@@ -30,6 +32,7 @@ int main() {
 
     Ware *rootWare = new Ware("ROOT", 1, 1, 1, 100);
     BinaryTree *binaryTree = new BinaryTree(rootWare);
+    HashTable *hashtable = new HashTable();
 
     for(int i = 0; i < 10; i++){
         int Dist = rand() % 62;
@@ -40,6 +43,7 @@ int main() {
         Ware *ware = new Ware(random_string(Dist,5), seriennummer, gewicht, einkaufspreis, verkaufspreis);
         sortiment->addWare(ware);
         binaryTree->insert(ware);
+        hashtable->insert(ware);
     }
 
     std::cout << "---------------------------------------------------------------------------------------------------------------" << std::endl;
@@ -84,7 +88,7 @@ int main() {
 
     std::cout << binaryTree->printPostorder() << "\n";
 
-    delete sortiment;
+    //delete sortiment;
 
     delete binaryTree;
 
@@ -95,9 +99,9 @@ int main() {
 
     std::cout << "---------------------------------------------------------------------------------------------------------------" << std::endl;
 
-    doublyLinkedList *list = new doublyLinkedList();
+    DoublyLinkedList *list = new DoublyLinkedList();
 
-    doublyLinkedList *list5 = new doublyLinkedList();
+    DoublyLinkedList *list5 = new DoublyLinkedList();
 
     std::cout << "Liste 5:" << std::endl;
     list5->print();
@@ -117,7 +121,7 @@ int main() {
     std::cout << "Liste 1:" << std::endl;
     list->print();
 
-    doublyLinkedList *list2 = new doublyLinkedList();
+    DoublyLinkedList *list2 = new DoublyLinkedList();
     list2->insertSorted(2);
     list2->insertSorted(3);
     list2->insertSorted(4);
@@ -146,6 +150,47 @@ int main() {
     delete list;
     delete list2;
     delete list5;
+
+    std::cout << "---------------------------------------------------------------------------------------------------------------" << std::endl;
+
+
+    std::cout << "AVL Tree Test" << std::endl;
+
+    std::cout << "---------------------------------------------------------------------------------------------------------------" << std::endl;
+
+    AvlNode* root = new AvlNode(10);
+    root = root->insert(7);
+    root = root->insert(23);
+    root = root->insert(9);
+    root = root->insert(2);
+
+    /* -- Scenarion 1 - rightRotation -- */
+    //root = root->insert(2);
+
+    /* -- Scenarion 2 - leftRotation -- */
+    // root = root->insert(17);
+    // root = root->insert(19);
+
+    /* -- Scenarion 3 - rightRotation, then leftRotation -- */
+    // root = root->insert(17);
+    // root = root->insert(16);
+
+    /* -- Scenarion 4 - leftRotation, then rightRotattion -- */
+    // root = root->insert(17);
+    // root = root->insert(6);
+    // root = root->insert(7);
+
+    std::cout << root->printPreorder();
+    std::cout << "Perfectly balanced! As all things should be!\n";
+
+    std::cout << "---------------------------------------------------------------------------------------------------------------" << std::endl;
+
+
+    std::cout << "HashTable Test" << std::endl;
+
+    std::cout << "---------------------------------------------------------------------------------------------------------------" << std::endl;
+
+    hashtable->print();
 
     return 0;
 

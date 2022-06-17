@@ -2,7 +2,7 @@
 BINARY = prototyp
 # Object files
 #hier alle .cpp-Files einfügen, aber mit Endung .o
-OBJS   = main.o Ware.o Sortiment.o Algorithms.o extendedBinaryTree.o extendedBinaryTreeNode.o doublyLinkedList.o extendedListItem.o
+OBJS   = main.o Ware.o Sortiment.o Algorithms.o extendedBinaryTree.o extendedBinaryTreeNode.o doublyLinkedList.o extendedListItem.o extendedAvlTree.o hashTableChaining.o
 # Compiler flags
 CFLAGS = -Werror -Wall -std=c++17
 # Linker flags

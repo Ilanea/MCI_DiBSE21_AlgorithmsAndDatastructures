@@ -2,12 +2,12 @@
 #include <iostream>
 #include <string>
 
-doublyLinkedList::doublyLinkedList() {
+DoublyLinkedList::DoublyLinkedList() {
     this->head = nullptr;
     this->tail = nullptr;
 }
 
-void doublyLinkedList::append(doublyLinkedList* appendingList) {
+void DoublyLinkedList::append(DoublyLinkedList* appendingList) {
     if(appendingList->head != nullptr && appendingList->tail != nullptr){
         this->tail->next = appendingList->head;
         appendingList->head->previous = this->tail;
@@ -18,7 +18,7 @@ void doublyLinkedList::append(doublyLinkedList* appendingList) {
 }
 
 
-void doublyLinkedList::splice(doublyLinkedList* insertingList, int position) {
+void DoublyLinkedList::splice(DoublyLinkedList* insertingList, int position) {
     if(insertingList->head != nullptr && insertingList->tail != nullptr){
         ExtendedListItem* prev = nullptr;
         ExtendedListItem* current = nullptr;
@@ -41,7 +41,7 @@ void doublyLinkedList::splice(doublyLinkedList* insertingList, int position) {
 }
 
 
-void doublyLinkedList::insertAtStart(int key) {
+void DoublyLinkedList::insertAtStart(int key) {
     ExtendedListItem* temp = new ExtendedListItem(key);
 
     if(this->head == nullptr) {
@@ -59,7 +59,7 @@ void doublyLinkedList::insertAtStart(int key) {
     }
 }
 
-void doublyLinkedList::insertAtEnd(int key) {
+void DoublyLinkedList::insertAtEnd(int key) {
     ExtendedListItem* temp = new ExtendedListItem(key);
 
     if(this->head == nullptr) {
@@ -77,7 +77,7 @@ void doublyLinkedList::insertAtEnd(int key) {
     }
 }
 
-void doublyLinkedList::insertSorted(int key) {
+void DoublyLinkedList::insertSorted(int key) {
     ExtendedListItem* prev = nullptr;
     ExtendedListItem* current = this->head;
     ExtendedListItem* newItem = new ExtendedListItem(key); //create the new ListItem
@@ -108,7 +108,7 @@ void doublyLinkedList::insertSorted(int key) {
     }
 }
 
-void doublyLinkedList::deleteItem(int key) {
+void DoublyLinkedList::deleteItem(int key) {
 
     ExtendedListItem* current = nullptr;
     ExtendedListItem* del = nullptr;
@@ -146,7 +146,7 @@ void doublyLinkedList::deleteItem(int key) {
 
 }
 
-void doublyLinkedList::print() {
+void DoublyLinkedList::print() {
     ExtendedListItem* temp = this->head;
 
     if(temp == nullptr){
