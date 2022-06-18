@@ -1,5 +1,7 @@
 #include "hashTableChaining.h"
 #include <iostream>
+#include <list>
+#include <algorithm>
 
 HashTable::HashTable() {
     this->size = 0;
@@ -52,42 +54,50 @@ void HashTable::setHashFunction(std::string algorithmName) {
     std::cerr << "The Hash Function provided was not found!" << std::endl;
 }
 
-/*
+
 const Ware* HashTable::search(std::string key) {
     int hashValue = this->hashFunction(key);    //  key is "hashed" and stored in the variable int hashValue
     hashValue = hashValue % this->size;
-    int i = 0;
-    while(this->entries[hashValue].key != key && this->entries[hashValue].key != "" && i <= this->size) {
-        hashValue = (hashValue + 1) % this->size;
-        i++;
-    }
 
-    if(this->entries[hashValue].key == key) {
-        return this->entries[hashValue].lagerEntry;
-    } else {
-        std::cout << "Entry with telephone number " << key << " not found!" << std::endl;
+    if(entries[hashValue].empty()){
+        std::cout << "Hashtable is empty, no entries" << std::endl;
         return nullptr;
     }
+    else{
+        for(auto i : entries[hashValue]){
+            if(i->getBezeichnung() == key){
+                std::cout << "Ware mit der Bezeichnung " << key << " im Lager gefunden!" << std::endl;
+                return i;
+            }
+        }
+        std::cout << "Ware mit der Bezeichnung " << key << " wurde nicht gefunden!" << std::endl;
+        return nullptr;
+    }
+
+
 }
 
 bool HashTable::deleteItem(std::string key) {
     int hashValue = this->hashFunction(key);
     hashValue = hashValue % this->size;
 
-    while(this->entries[hashValue].key != key && this->entries[hashValue].key != "") {
-        hashValue = (hashValue + 1) % this->size;
+    if(entries[hashValue].empty()){
+        std::cout << "Hashtable is empty, no entries" << std::endl;
+        return false;
     }
-
-    if(this->entries[hashValue].key == key) {
-        this->entries[hashValue].key = "deleted";
-        this->entries[hashValue].lagerEntry = nullptr;
-        delete this->entries[hashValue].lagerEntry;
-        return true;
-    } else {
+    else{
+        for(auto i : entries[hashValue]){
+            if(i->getBezeichnung() == key){
+                entries[hashValue].remove(i);
+                std::cout << "Ware mit der Bezeichnung " << key << " wurde geloescht!" << std::endl;
+                return true;
+            }
+        }
+        std::cout << "Ware mit der Bezeichnung " << key << " wurde nicht gefunden!" << std::endl;
         return false;
     }
 }
-*/
+
 
 
 /*  algorithm that "hashes" the last digit of a number  */
@@ -118,7 +128,7 @@ int firstTwoLetters(std::string bezeichnung) {
     std::string first_two = bezeichnung.substr(0, 2);
     int ascii = int(first_two[0]) + int(first_two[1]);
 
-    std::cout << "ASCII Value of first 2 Characters: " << ascii << std::endl;
+    //std::cout << "ASCII Value of first 2 Characters: " << ascii << std::endl;
 
     return ascii;
 }

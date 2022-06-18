@@ -192,6 +192,27 @@ int main() {
 
     hashtable->print();
 
+    Ware *ware1 = new Ware("Testware", 0, 0, 0, 0);
+    Ware *ware2 = new Ware("Testware1", 0, 0, 0, 0);
+
+    hashtable->insert(ware1);
+    hashtable->insert(ware2);
+
+    hashtable->print();
+
+    std::cout << "HashTable Search:" << std::endl;
+
+    hashtable->search("Testware");
+    hashtable->search("Testware3");
+
+    std::cout << "HashTable Delete:" << std::endl;
+
+    hashtable->deleteItem("Testware1");
+    hashtable->deleteItem("Testware3");
+
+    hashtable->print();
+
+
     return 0;
 
 }
